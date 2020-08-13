@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Redirect, useLocation } from "react-router-dom"
 import User from '../common/user'
+import { Button, Box } from '@material-ui/core'
 
 interface ILoginProps {
   authenticated: boolean,
@@ -21,8 +22,10 @@ function Login({ authenticated, login }: ILoginProps) {
     }
   }
 
-  const { from  }: any = location.state || { from: { pathname: "/" } }
-  if (authenticated) return <Redirect to={from} />
+  const { from }: any = location.state || { from: { pathname: "/" } }
+  if (authenticated) {
+    return <Redirect to={from} />
+  }
 
   return (
     <>
@@ -39,7 +42,7 @@ function Login({ authenticated, login }: ILoginProps) {
         type="password"
         placeholder="password"
       />
-      <button onClick={handleClick}>Login</button>
+      <Button variant="contained" onClick={handleClick}>Login</Button>
     </>
   )
 }

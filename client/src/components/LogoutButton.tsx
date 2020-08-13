@@ -1,6 +1,6 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
-import User from "../common/user"
+import Button from '@material-ui/core/Button'
 
 interface ILogoutButtionProps {
   logout: () => void,
@@ -11,7 +11,7 @@ function LogoutButton({ logout }: ILogoutButtionProps) {
     logout()
     history.push("/")
   }
-  return <button onClick={handleClick}>Logout</button>
+  return <Button variant="contained" onClick={handleClick}>Logout</Button>
 }
 
 export default LogoutButton
