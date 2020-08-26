@@ -3,6 +3,7 @@ import { Redirect, useLocation, Route } from "react-router-dom"
 import User from '../common/user'
 import AuthWrapper from "../components/auth/AuthWrapper"
 import Login from './Login'
+import Signup from './Signup'
 
 interface ILoginProps {
   authenticated: boolean,
@@ -21,8 +22,8 @@ function Auth({ authenticated, login }: ILoginProps) {
       <Route path="/login">
         <Login authenticated={authenticated} login={login} />
       </Route>
-      <Route path="/register">
-        <Login authenticated={authenticated} login={login} />
+      <Route path="/signup">
+        <Signup login={login} />
       </Route>
     </AuthWrapper>
   )

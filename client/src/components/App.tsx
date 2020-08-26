@@ -6,7 +6,7 @@ import Home from '../pages/Home';
 import User from '../common/user'
 import Auth from '../pages/Auth';
 
-function App() {
+const App = () => {
   const [user, setUser] = useState<User | null>(null)
   const authenticated = user != null;
   const login = (props: User) => setUser(signIn(props));

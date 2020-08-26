@@ -1,12 +1,12 @@
 import React from "react"
 import { Route, Redirect, useLocation } from "react-router-dom"
 
-interface IAuthRoute {
+interface IAuthRouteProps {
   authenticated: boolean,
   component?: any,
   [rest: string]: {}
 }
-const AuthRoute = ({ authenticated, component: Component, ...rest }: IAuthRoute) => {
+const AuthRoute = ({ authenticated, component: Component, ...rest }: IAuthRouteProps) => {
   console.log(authenticated)
   return (
     <Route
